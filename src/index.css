@@ -1,0 +1,25 @@
+*{
+  box-sizing: border-box;
+}
+html, body{
+  margin: 0;
+  height: 100%;
+  width: 100%;
+}
+.container, .wrapper{
+  position: relative;
+  height: 100%;
+  width: 100%;
+  background-color: #cedede;
+  text-align: center;
+  padding: 20px;
+}
+h3{
+  position: relative;
+}
+textarea{
+  height: 200px;
+  width: 60%;
+  white-space: nowrap;
+  font-size: 20px;
+}
