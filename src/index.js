@@ -18,7 +18,7 @@ function mostImportantFunction(){
     }
     let wordsSplit = linesSplit[lineNumber].split(' ');
     for(let i = 0; i < wordsSplit.length; i++){
-      let translated = EmojiFile.translate(wordsSplit[i]);
+      let translated = EmojiFile.translateAndHTML(wordsSplit[i]);
       go.appendChild(translated);
     }
     go.appendChild(document.createElement('br'));
