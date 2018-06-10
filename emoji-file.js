@@ -1,4 +1,4 @@
-const em = require('emojilib');
+const em = require('emojilib').lib;
 
 
 // console.log(em.lib);
@@ -7,33 +7,96 @@ const mainExp = new RegExp(/(?:[\u2700-\u27bf]|(?:\ud83c[\udde6-\uddff]){2}|[\ud
 const notWords = '.,/!\'\"-+*&^%#$@;:|\\=?()[]{}<>~_';
 
 function isItAnEmoji(word){
-  return word.test(mainExp);
+  return mainExp.test(word);
 }
 
-function translate(word){
-  let span = document.createElement('span');
-  span.innerHTML = '-- ' + word + ' --  ';
-  return span;
-}
-function translateAndHTML(word){
-  let begin = '', end = '', node;
-
-  while(notWords.indexOf(word[0]) !== -1){
-    begin += word[0];
-    word = word.slice(1);
+function allPossiblesFor(word){
+  let wordCopy = word.trim().toLowerCase();
+  let allEmojis = [];
+  if(isItAnEmoji(wordCopy)){
+    return allEmojis;
   }
-  while(notWords.indexOf(word[word.length - 1]) !== -1){
-    end = word[word.length - 1] + end; //So that it doesn't reverse like end += word[word.length - 1];
-    word = word.slice(1);
+
+  if(!wordCopy || wordCopy == 'a' || wordCopy == 'an' || wordCopy == 'the' || wordCopy == 'it'){
+    return allEmojis;
+  }
+
+  let singular = '';
+  if(wordCopy.length > 2 && wordCopy[wordCopy.length - 1] == 's'){
+    singular = wordCopy.slice(0, wordCopy.length - 1);
+  }
+  let plural = '';
+  if(wordCopy.length > 1){
+    plural = wordCopy + 's';
+  }
+  let verb = '', verbWithE = '', doubledVerb = '';
+  if(wordCopy.slice(wordCopy.length - 3) == 'ing'){
+    verb = wordCopy.slice(0, wordCopy.length - 3); //reading becomes read
+    verbWithE = verb + 'e'; //danc becomes dance
+    doubledVerb = verb.slice(0, verb.length - 1); //swimm becomes swim
+  }
+  switch(wordCopy){
+    case 'i':
+    case 'you':
+      allEmojis.push('😀 ', '😃 ');
+      break;
+    case 'he':
+      allEmojis.push('🙋🏻‍♂️ ');
+      break;
+    case 'she':
+      allEmojis.push('🙋🏻 ');
+      break;
+    case 'we':
+    case 'they':
+      allEmojis.push('👨‍👩‍👧‍👦 ');
+      break;
+    case 'is':
+    case 'am':
+    case 'are':
+      allEmojis.push('👉 ');
+      break;
+  }
+  let compareArray = [wordCopy, plural, singular, verb, verbWithE, doubledVerb];
+  for(key in em){
+    let keywords = new Set(em[key].keywords);
+    let flag = false;
+    compareArray.map(el => {
+      if(keywords.has(el)){ 
+        flag = true;
+        return;
+      }
+    });
+    if(keywords && (flag || compareArray.indexOf(key) >= 0)){
+      allEmojis.push(em[key].char + ' ');
+    }
+  }
+
+  return allEmojis;
+}
+
+
+function translateAndHTML(Oword){
+  let begin = '', end = '', node;
+  let word = Oword.toLowerCase();
+
+  while(notWords.indexOf(Oword[0]) !== -1){
+    begin += Oword[0];
+    Oword = Oword.slice(1);
+  }
+  while(notWords.indexOf(Oword[Oword.length - 1]) !== -1){
+    end = Oword[Oword.length - 1] + end; //So that it doesn't reverse like end += word[word.length - 1];
+    Oword = Oword.slice(0, Oword.length - 1);
   }
 
   let allEmojis = allPossiblesFor(word);
-  if(allEmojis == ''){
-    allEmojis = [word];
+  console.log(allEmojis);
+  if(!allEmojis.length){
+    allEmojis = [Oword];
   }
-
+  // console.log(allEmojis);
   if(allEmojis.length == 1){
-    node = document.createElement('span').innerHTML = begin + allEmojis[0] + end + ' ';
+    node = document.createElement('span');
+    node.innerHTML = begin + allEmojis[0] + end + ' ';
   }
   else{
     node = document.createElement('select');
@@ -46,4 +109,4 @@ function translateAndHTML(word){
   return node;
 }
 
-module.exports.translate = translate;
+module.exports.translateAndHTML = translateAndHTML;
