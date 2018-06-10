@@ -10,8 +10,8 @@ come.addEventListener('input', mostImportantFunction);
 
 function mostImportantFunction(){
   let inContent = come.value;
-  // go.innerHTML = inContent;
-  let linesSplit = inContent.trim().toLowerCase().split('\n');
+  go.innerHTML = '';
+  let linesSplit = inContent.trim().split('\n');
   for(let lineNumber = 0; lineNumber < linesSplit.length; lineNumber++){
     if(linesSplit[lineNumber] == ''){ // Can't do anything if its a blank line
       continue;
