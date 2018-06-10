@@ -1,5 +1,10 @@
+:root{
+  --first-color: #1976D2;
+  --second-color: #fff;
+}
 *{
   box-sizing: border-box;
+  font-size: 20px;
 }
 html, body{
   margin: 0;
@@ -10,16 +15,68 @@ html, body{
   position: relative;
   height: 100%;
   width: 100%;
-  background-color: #cedede;
   text-align: center;
   padding: 20px;
 }
-h3{
+h2{
   position: relative;
+  font-family: Roboto;
+  color: var(--first-color);
+  font-size: 25px;
+  margin: 0;
+  margin-bottom: 0.35em;
 }
 textarea{
   height: 200px;
   width: 60%;
   white-space: nowrap;
   font-size: 20px;
+  padding: 10px;
+  border-radius: 5px;
+  border-width: 2px;
+  border-color: #757575;
+  margin: 10px 0;
+}
+textarea:focus{
+  outline: none;
+  border-color: var(--first-color);
+}
+select{
+  appearance: none;
+  -webkit-appearance: none;
+  display: inline-block;
+  border: 0;
+  border-radius: 3px;
+  background-color: #efefef;
+  box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.3), 0px 3px 5px 0px rgba(0,0,0,0.4);
+  padding: 0px 5px 0px 5px;
+  margin: 0 5px 4px 5px;
+  cursor: pointer;
+}
+select:focus{
+  outline: none;
+}
+.output-area{
+  margin-bottom: 15%;
+}
+hr{
+  width: 70%;
+  border: none;
+  border-top: 4px solid var(--first-color);
+  background: none;
+}
+button{
+  width: 140px;
+  padding: 6px 0px;
+  border: 0;
+  border-radius: 3px;
+  border: 1px solid var(--first-color);
+  color: var(--first-color);
+  margin-bottom: 10px;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+button:hover{
+  color: var(--second-color);
+  background-color: var(--first-color);
 }
