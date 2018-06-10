@@ -1,12 +1,12 @@
 import EmojiFile from '../emoji-file.js';
 
-// const
+
 const come = document.getElementById('in');
-come.value = '';
+come.value = 'i need a doctor to bring me back to life';
 const go = document.getElementById('out');
 console.log(come);
 come.addEventListener('input', mostImportantFunction);
-// console.log(EmojiFile);
+mostImportantFunction();
 
 function mostImportantFunction(){
   let inContent = come.value;
