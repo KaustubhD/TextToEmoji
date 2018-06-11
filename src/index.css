@@ -56,6 +56,9 @@ select{
 select:focus{
   outline: none;
 }
+#out{
+  margin-top: 10px;
+}
 .output-area{
   margin-bottom: 15%;
 }
@@ -79,4 +82,18 @@ button{
 button:hover{
   color: var(--second-color);
   background-color: var(--first-color);
+}
+#hidden{
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  position: absolute;
+  top: 1000px;
+  right: 2000px;
+}
+.emoji{
+  font-size: 2.6em;
+  line-height: 1;
+  vertical-align: middle;
+  margin-left: 5px;
 }
