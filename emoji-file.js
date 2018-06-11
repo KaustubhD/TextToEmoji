@@ -66,8 +66,11 @@ function allPossiblesFor(word){
         return;
       }
     });
-    if(keywords && ((flag || compareArray.indexOf(key) >= 0) && em[key].category != 'flags')){
-      allEmojis.push(em[key].char + ' ');
+    if(keywords && (flag || compareArray.indexOf(key) >= 0)){
+      // console.log(em[key].char);
+      if((wordCopy.length <= 2 && em[key].category != 'flags') || (wordCopy.length > 2)){
+        allEmojis.push(em[key].char + ' ');
+      }
     }
   }
 
