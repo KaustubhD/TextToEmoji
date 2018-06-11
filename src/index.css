@@ -1,19 +1,22 @@
 :root{
-  --first-color: #1976D2;
+  --first-color: #03A9F4;
   --second-color: #fff;
+  --back-color: #243b55;
 }
 *{
   box-sizing: border-box;
-  font-size: 20px;
+  font-family: sans-serif;
 }
 html, body{
   margin: 0;
   height: 100%;
   width: 100%;
+  background: linear-gradient(to right, #141e30, #243b55);
+
 }
 .container, .wrapper{
   position: relative;
-  height: 100%;
+  min-height: 100%;
   width: 100%;
   text-align: center;
   padding: 20px;
@@ -29,17 +32,27 @@ h2{
 textarea{
   height: 200px;
   width: 60%;
-  white-space: nowrap;
+  white-space: wrap;
   font-size: 20px;
   padding: 10px;
   border-radius: 5px;
-  border-width: 2px;
-  border-color: #757575;
+  border-width: 1px;
+  color: #fff;
+  font-weight: 100;
+  border-color: var(--first-color);
   margin: 10px 0;
+  background: transparent;
 }
 textarea:focus{
   outline: none;
   border-color: var(--first-color);
+}
+select, textarea, span, button{
+  font-size: 20px;
+}
+span{
+  color: #fff;
+  font-weight: 100;
 }
 select{
   appearance: none;
@@ -53,11 +66,12 @@ select{
   margin: 0 5px 4px 5px;
   cursor: pointer;
 }
+
 select:focus{
   outline: none;
 }
 #out{
-  margin-top: 10px;
+  margin-top: 20px;
 }
 .output-area{
   margin-bottom: 15%;
@@ -65,7 +79,7 @@ select:focus{
 hr{
   width: 70%;
   border: none;
-  border-top: 4px solid var(--first-color);
+  border-top: 2px solid var(--first-color);
   background: none;
 }
 button{
@@ -75,12 +89,13 @@ button{
   border-radius: 3px;
   border: 1px solid var(--first-color);
   color: var(--first-color);
+  background-color: transparent;
   margin-bottom: 10px;
   transition: all 0.2s ease-in-out;
   cursor: pointer;
 }
 button:hover{
-  color: var(--second-color);
+  color: var(--back-color);
   background-color: var(--first-color);
 }
 #hidden{
@@ -96,4 +111,44 @@ button:hover{
   line-height: 1;
   vertical-align: middle;
   margin-left: 5px;
+}
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  margin: 0 0 5px 0;
+  color: rgba(0, 0, 0, 0.3);
+  font-family: Ubuntu;
+  font-size: 0.7em;
+}
+footer span {
+  display: block;
+  font-size: 0.5em;
+  color: rgba(0, 0, 0, 0.2);
+  text-transform: uppercase;
+  margin-bottom: 3px;
+}
+
+@media screen and (max-width: 600px){
+  .container, .wrapper{
+    padding: 0px;
+  }
+  textarea{
+    height: 150px;
+    width: 90%;
+    font-size: 15px;
+  }
+  hr{
+    width: 85%;
+  }
+  span, select{
+    font-size: 15px;
+  }
+  button:hover, button:focus{
+    background-color: var(--second-color);
+    color: var(--first-color);
+    outline: none;
+  }
+
 }
