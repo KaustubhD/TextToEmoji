@@ -14,14 +14,14 @@ let cacheURLs = [
   'src/icons/android-icon-600x600.png'
 ];
 
-// self.addEventListener('install', function(e){
-//   e.waitUntil(
-//     caches.open(cacheName).then(function(ch){
-//       return ch.addAll(cacheURLs);
-//     })
-//   );
-//   console.log('Caching complete');
-// });
+self.addEventListener('install', function(e){
+  e.waitUntil(
+    caches.open(cacheName).then(function(ch){
+      return ch.addAll(cacheURLs);
+    })
+  );
+  console.log('Caching complete');
+});
 
 self.addEventListener('fetch', function(e){
   console.log(e.request);
