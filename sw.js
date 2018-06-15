@@ -3,6 +3,7 @@
 // });
 let cacheName = 'tte';
 let cacheURLs = [
+  './',
   'index.html',
   'src/index.css',
   'src/bundle.js',
