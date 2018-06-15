@@ -23,8 +23,10 @@ self.addEventListener('install', function(e){
 });
 
 self.addEventListener('fetch', function(e){
+  console.log(e.request);
   e.respondWith(
     fetch(e.request).catch(function(){
+      console.log(e.request);
       return caches.match(e.request).then(function(response){
         if(response){
           return response;
