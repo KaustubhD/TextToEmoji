@@ -33,7 +33,7 @@ h2{
   margin-bottom: 0.35em; */
 }
 textarea{
-  height: 200px;
+  /* height: 200px;
   width: 60%;
   white-space: wrap;
   font-size: 20px;
@@ -41,10 +41,10 @@ textarea{
   border-radius: 5px;
   border-width: 1px;
   color: #fff;
-  font-weight: 100;
+  font-weight: 100; */
   border-color: var(--first-color);
-  margin: 10px 0;
-  background: linear-gradient(70deg, #141e30, #243b55);
+  /* margin: 10px 0;
+  background: linear-gradient(70deg, #141e30, #243b55); */
 }
 textarea:focus{
   outline: none;
@@ -98,16 +98,16 @@ hr{
   background: none;
 }
 button{
-  width: 140px;
+  /* width: 140px;
   padding: 6px 0px;
   border: 0;
-  border-radius: 3px;
+  border-radius: 3px; */
   border: 1px solid var(--first-color);
   color: var(--first-color);
-  background-color: transparent;
+  /* background-color: transparent;
   margin-bottom: 10px;
   transition: all 0.2s ease-in-out;
-  cursor: pointer;
+  cursor: pointer; */
 }
 button:hover{
   color: var(--back-color);
