@@ -9,7 +9,7 @@
 }
 html, body{
   margin: 0;
-  height: 100%;
+  min-height: 100%;
   width: 100%;
   background: linear-gradient(70deg, #141e30, #243b55);
 
@@ -33,9 +33,9 @@ h2{
   margin-bottom: 0.35em; */
 }
 textarea{
-  /* height: 200px;
+  height: 200px;
   width: 60%;
-  white-space: wrap;
+  /* white-space: wrap;
   font-size: 20px;
   padding: 10px;
   border-radius: 5px;
