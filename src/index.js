@@ -477,7 +477,7 @@ let deferredPrompt;
 let btnAdd = document.getElementById('addBtn');
 
 window.addEventListener('beforeinstallprompt', (e) => {
-  e.preventDefault();
+  // e.preventDefault();
   deferredPrompt = e;
   btnAdd.style.display = 'inline-block';
 });
