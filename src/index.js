@@ -1,7 +1,7 @@
 import EmojiFile from '../emoji-file.js';
 
 if('serviceWorker' in navigator){
-  navigator.serviceWorker.register('sw.js').then(function(reg){
+  navigator.serviceWorker.register('./sw.js').then(function(reg){
     console.log('Registration complete with scope', reg.scope);
   }).catch(function(err){
     console.log('Registration failed', err);
