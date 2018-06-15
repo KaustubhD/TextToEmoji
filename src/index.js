@@ -1,5 +1,13 @@
 import EmojiFile from '../emoji-file.js';
 
+if('serviceWorker' in navigator){
+  navigator.serviceWorker.register('../sw.js').then(function(reg){
+    console.log('Registration complete with scope', reg.scope);
+  }).catch(function(err){
+    console.log('Registration failed', err);
+  })
+}
+
 const come = document.getElementById('in');
 come.value = 'i need a doctor to bring me back to life';
 const go = document.getElementById('out');
