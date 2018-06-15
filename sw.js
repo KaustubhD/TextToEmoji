@@ -9,8 +9,7 @@ let cacheURLs = [
   'src/bundle.js',
   'manifest.json',
   'favicon.ico',
-  'https://fonts.googleapis.com/css?family=Roboto',
-  'src/icons/android-icon-192x192.png'
+  'https://fonts.googleapis.com/css?family=Roboto|Ubuntu'
 ];
 
 self.addEventListener('install', function(e){
