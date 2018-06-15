@@ -6,7 +6,7 @@
   "background-color": "#243b55",
   "theme_color": "#243b55",
   "orientation": "portrait",
-  "scope": "src/",
+  "scope": ".",
   "description": "An app to get your text into emojis",
   "icons": [
     {
@@ -30,7 +30,7 @@
       "size": "310x310"
     },
     {
-      "src": "/src/icons/ms-icon-512x512.png",
+      "src": "/src/icons/android-icon-512x512.png",
       "type": "image/png",
       "size": "512x512"
     }
