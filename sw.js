@@ -10,8 +10,7 @@ let cacheURLs = [
   'manifest.json',
   'favicon.ico',
   'https://fonts.googleapis.com/css?family=Roboto',
-  'src/icons/android-icon-192x192.png',
-  'src/icons/android-icon-600x600.png'
+  'src/icons/android-icon-192x192.png'
 ];
 
 self.addEventListener('install', function(e){
