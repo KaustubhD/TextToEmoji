@@ -3,7 +3,7 @@
   --second-color: #fff;
   --back-color: #243b55;
 }
-*{
+/* *{
   box-sizing: border-box;
   font-family: sans-serif;
 }
@@ -11,7 +11,7 @@ html, body{
   margin: 0;
   height: 100%;
   width: 100%;
-  background: linear-gradient(to right, #141e30, #243b55);
+  background: linear-gradient(70deg, #141e30, #243b55);
 
 }
 .container, .wrapper{
@@ -21,13 +21,16 @@ html, body{
   text-align: center;
   padding: 20px;
 }
+.container{
+  overflow: hidden;
+} */
 h2{
-  position: relative;
-  font-family: Roboto;
+  /* position: relative;
+  font-family: Roboto; */
   color: var(--first-color);
-  font-size: 25px;
+  /* font-size: 25px;
   margin: 0;
-  margin-bottom: 0.35em;
+  margin-bottom: 0.35em; */
 }
 textarea{
   height: 200px;
@@ -41,7 +44,7 @@ textarea{
   font-weight: 100;
   border-color: var(--first-color);
   margin: 10px 0;
-  background: transparent;
+  background: linear-gradient(70deg, #141e30, #243b55);
 }
 textarea:focus{
   outline: none;
@@ -57,14 +60,26 @@ span{
 select{
   appearance: none;
   -webkit-appearance: none;
+  -moz-appearance: none; 
   display: inline-block;
   border: 0;
   border-radius: 3px;
   background-color: #efefef;
   box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.3), 0px 3px 5px 0px rgba(0,0,0,0.4);
-  padding: 0px 5px 0px 5px;
+  padding: 2px 8px 0px 5px;
   margin: 0 5px 4px 5px;
   cursor: pointer;
+}
+select::after{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+option{
+  font-size: 15px;
 }
 
 select:focus, button:focus{
@@ -103,8 +118,9 @@ button:hover{
   width: 1px;
   overflow: hidden;
   position: absolute;
-  top: 1000px;
-  right: 2000px;
+  top: 20px;
+  right: 20px;
+  z-index: -1;
 }
 .emoji{
   font-size: 2.6em;
@@ -117,15 +133,15 @@ footer {
   bottom: 0;
   width: 100%;
   text-align: center;
-  margin: 0 0 5px 0;
-  color: rgba(0, 0, 0, 0.3);
+  margin: 0 0 5px -20px;
+  color: rgba(255, 255, 255, 0.3);
   font-family: Ubuntu;
   font-size: 0.7em;
 }
 footer span {
   display: block;
   font-size: 0.5em;
-  color: rgba(0, 0, 0, 0.2);
+  color: rgba(255, 255, 255, 0.2);
   text-transform: uppercase;
   margin-bottom: 3px;
 }

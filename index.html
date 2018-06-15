@@ -5,12 +5,41 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="This is a simple app to get emojis from text">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="theme-color" content="#243b55">
   <title>Emoji Translator</title>
   <link rel="manifest" href="/manifest.json">
   <link rel="shortcut icon" href="/favicon.png">
   <link href="https://fonts.googleapis.com/css?family=Roboto|Ubuntu" rel="stylesheet">
   <link rel="stylesheet" href="./src/index.css" />
-  <!-- <link rel="stylesheet" href="./src/material.min.css" /> -->
+  <style>
+    *{
+      box-sizing: border-box;
+      font-family: sans-serif;
+    }
+    html, body{
+      margin: 0;
+      height: 100%;
+      width: 100%;
+      background: linear-gradient(70deg, #141e30, #243b55);
+    }
+    .container, .wrapper{
+      position: relative;
+      min-height: 100%;
+      width: 100%;
+      text-align: center;
+      padding: 20px;
+    }
+    .container{
+      overflow: hidden;
+    }
+    h2{
+      position: relative;
+      font-family: Roboto;
+      font-size: 25px;
+      margin: 0;
+      margin-bottom: 0.35em;
+    }
+  </style>
 </head>
 <body>
   <div class="container">
