@@ -37,7 +37,7 @@
     {
       "src": "./src/icons/android-icon-600x600.png",
       "type": "image/png",
-      "size": "600x600"
+      "sizes": "600x600"
     }
   ]
 }
