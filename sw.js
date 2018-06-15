@@ -1,6 +1,3 @@
-// self.addEventListener('fetch', function(e){
-//   console.log(e.request.url);
-// });
 let cacheName = 'tte';
 let cacheURLs = [
   './',
@@ -18,15 +15,12 @@ self.addEventListener('install', function(e){
       return ch.addAll(cacheURLs);
     })
   );
-  console.log('Caching complete');
+  // console.log('Caching complete');
 });
 
 self.addEventListener('fetch', function(e){
-  console.log(e.request);
-  console.log(e.request.url);
   e.respondWith(
     fetch(e.request).catch(function(){
-      console.log(e.request);
       return caches.match(e.request).then(function(response){
         if(response){
           return response;
