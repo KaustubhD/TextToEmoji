@@ -26,17 +26,17 @@ self.addEventListener('install', function(e){
 self.addEventListener('fetch', function(e){
   console.log(e.request);
   console.log(e.request.url);
-  // e.respondWith(
-  //   fetch(e.request).catch(function(){
-  //     console.log(e.request);
-  //     return caches.match(e.request).then(function(response){
-  //       if(response){
-  //         return response;
-  //       }
-  //       else{
-  //         console.log('Not Available');
-  //       }
-  //     })
-  //   })
-  // );
+  e.respondWith(
+    fetch(e.request).catch(function(){
+      console.log(e.request);
+      return caches.match(e.request).then(function(response){
+        if(response){
+          return response;
+        }
+        else{
+          console.log('Not Available');
+        }
+      })
+    })
+  );
 });
