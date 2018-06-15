@@ -477,6 +477,7 @@ let deferredPrompt;
 let btnAdd = document.getElementById('addBtn');
 
 window.addEventListener('beforeinstallprompt', (e) => {
+  console.log('Event Fired');
   // e.preventDefault();
   deferredPrompt = e;
   btnAdd.style.display = 'inline-block';
