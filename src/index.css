@@ -13,15 +13,15 @@ html, body{
   width: 100%;
   background: linear-gradient(70deg, #141e30, #243b55);
 
-}
+} */
 .container, .wrapper{
-  position: relative;
+  /* position: relative;
   min-height: 100%;
   width: 100%;
-  text-align: center;
+  text-align: center; */
   padding: 20px;
 }
-.container{
+/* .container{
   overflow: hidden;
 } */
 h2{
