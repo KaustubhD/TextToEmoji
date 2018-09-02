@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kayd33/to-emoji.git"
+    "url": "git+https://github.com/kaydee/to-emoji.git"
   },
   "author": "Kay",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/kayd33/to-emoji/issues"
+    "url": "https://github.com/kaydee/to-emoji/issues"
   },
-  "homepage": "https://github.com/kayd33/to-emoji#readme",
+  "homepage": "https://github.com/kaydee/to-emoji#readme",
   "dependencies": {
     "emojilib": "^2.2.12"
   },

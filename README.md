@@ -4,7 +4,7 @@ A simple JS app to change your text to 😀
 
 Enjoy!
 
-### Almost forgot, Link to the page [here](https://kayd33.github.io/TextToEmoji)
+### Almost forgot, Link to the page [here](https://kaydee.github.io/TextToEmoji)
 
 Update:
   > Now a PWA (beginner level)
